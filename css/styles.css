@@ -75,7 +75,34 @@ h1 {
   transition: all 0.2s ease-in;
 }
 
+#guess-value:focus {
+  outline: none;
+}
+
 #guess-value:hover {
   background: #333;
   color: #fff;
+}
+
+/* Medai Quries */
+@media(max-width: 768px) {
+  .container {
+    max-width: 300px;
+    padding: 0 1rem;
+  }
+
+  h1 {
+    font-size: 2rem;
+    margin-top: 0.1rem;
+    margin-bottom: 0.5rem;
+  }
+
+  .lead {
+    font-size: 1.2rem;
+    margin-bottom: 0.5rem;
+  }
+
+  #guess-value:focus {
+    outline: none;
+  }
 }
