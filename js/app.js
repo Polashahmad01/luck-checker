@@ -1,7 +1,7 @@
 // Game values
 let min = 1,
     max = 10,
-    winningNum = 2,
+    winningNum = getRandomNum(min, max),
     guessLeft = 3;
 
 // All UI variables
@@ -63,6 +63,13 @@ function setMessage(msg, color) {
   message.style.marginBottom = '1rem';
 }
 
+// Play Agian Event Listener
+game.addEventListener('mousedown', function() {
+  if(e.target.className === 'play-again') {
+    window.location.reload();
+  }
+});
+
 
 // Game over
 function gameOver(won, msg) {
@@ -81,6 +88,15 @@ function gameOver(won, msg) {
   // Clear input
   guessInput.value = '';
 
+  // Play Again?
+  guessBtn.value = 'Play Again'
+  guessInput.className += 'play-again';
+
   // Set message
   setMessage(msg);
+}
+
+// Get RandomNum
+function getRandomNum(min, max) {
+  return Math.floor(Math.random()*(max-min+1)+min);
 }
